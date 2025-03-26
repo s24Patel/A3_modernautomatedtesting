@@ -6,11 +6,9 @@ Version: Alpaca
 
 This repository houses the code we require for examples and assignments.
 
-## Repository Usage
+## Repo
+git clone https://github.com/s24Patel/A3_modernautomatedtesting
 
-This repository will contain branches of code.
-
-Please refer to your instructor's directions on how to use this repository.
 
 ## Branch Usage
 
