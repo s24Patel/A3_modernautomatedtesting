@@ -1,13 +1,21 @@
 import calculateCanvasSize from "./calculateCanvasSize";
-import paintRequiredCalculator from "./paintRequiredCalculator";
+import calculatePaintRequired from "./calculatePaintRequired";
 
-function main() {
-  const area = calculateCanvasSize("10", "20");
-  const coveragePerLiter = 11.4;
+function main(): void {
+  try {
+    const canvasArea: number = calculateCanvasSize("10", "20");
+    const coveragePerLiter: number = 11.4;
 
-  const paintRequired = paintRequiredCalculator(area, coveragePerLiter);
+    if (isNaN(canvasArea) || canvasArea <= 0) {
+      throw new Error("Invalid canvas area calculated.");
+    }
 
-  console.log(`${paintRequired} is required to cover ${area} of canvas.`);
+    const paintRequired: number = calculatePaintRequired(canvasArea, coveragePerLiter);
+
+    console.log(`${paintRequired} liters of paint are required to cover ${canvasArea} square meters of canvas.`);
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
 }
 
 main();
